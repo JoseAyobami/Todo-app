@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field
 from typing import Optional
 from tortoise.contrib.pydantic import pydantic_model_creator
-from api.schemas.todo import Todo
+from api.models.todo import Todo
 
 
 

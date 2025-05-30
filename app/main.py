@@ -3,7 +3,12 @@ from api.routes.todo import todo_router
 from tortoise.contrib.fastapi import register_tortoise
 
 
-app = FastAPI(title="Todo App")
+app = FastAPI(
+    title="Todo App", 
+    description="A project on FastAPI",
+    version="1.0."
+    )
+
 app.include_router(todo_router)
 register_tortoise(
     app = app,
