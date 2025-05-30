@@ -5,9 +5,13 @@ from tortoise.contrib.fastapi import register_tortoise
 
 app = FastAPI(title="Todo App")
 app.include_router(todo_router)
-# register_tortoise(
-#     app
-# )
+register_tortoise(
+    app = app,
+    db_url="sqlite://todo.db",
+    add_exception_handlers=True,
+    generate_schemas=True,
+    modules={"modules": ["api.models.todo"]}
+)
 
 @app.get("/")
 def index():
